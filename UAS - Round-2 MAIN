@@ -5,7 +5,6 @@ file = mnist
 
 # our next task is to fit_transform or standardize our loaded data : 
 x_train = x_train/255
-y_train = y_train/9
 x_test = x_test/255
-y_test = y_test/9
+
 
