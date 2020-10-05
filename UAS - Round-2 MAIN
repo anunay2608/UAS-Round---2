@@ -1,0 +1,6 @@
+# loading MNIST dataset(inbuilt tensorflow dataset)
+from tensorflow.keras.dataset import mnist
+file = mnist
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+
+# our next task is to fit_transform or standardize our loaded data : 
