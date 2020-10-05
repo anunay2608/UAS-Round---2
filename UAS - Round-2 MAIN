@@ -4,3 +4,8 @@ file = mnist
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
 # our next task is to fit_transform or standardize our loaded data : 
+x_train = x_train/256
+y_train = y_train/10
+x_test = x_test/256
+y_test = y_test/10
+
