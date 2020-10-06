@@ -1,0 +1,25 @@
+#importinig libraries
+import cv2
+import numpy as np
+#Opening of camera 1
+cap = cv2.VideoCapture(0)
+if cap.isOpened():
+    Capturing frames
+    r, frame = cap.read()
+    cv2.imshow('Frame', frame)#showing the frame
+    
+    # To quit the  image press 'q' : 
+    if cv2.waitKey(0) & 0xFF == ord('q'):
+        print("Thankyou")
+    #to save the image press 's' :
+    if cv2.waitKey(0) & 0xFF == ord('s'):
+        cv2.imwrite('anunay.jpg', frame)
+
+#release the image
+cap.release()
+cv2.destroyAllWindows()
+
+print(np.asarray(frame))#This will give us the 3D array of image from which we can predict number written.
+
+
+
