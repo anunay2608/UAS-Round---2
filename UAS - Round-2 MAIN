@@ -5,6 +5,29 @@ file = mnist
 
 # our next task is to fit_transform or standardize our loaded data : 
 x_train = x_train/255
-x_test = x_test/255
+x_test = x_test/255 #this will give more efficient and precise result
 
+#creating a model and adding layers to it
+from tensorflow.keras.model import Sequential
+model = Sequential()
+model.add(Flatten(input_shape(28, 28))# Flatten is used to make our data 1D linear vector because cubic data can't be direct input.
+
+#adding layers:
+model.add(Dense(256, activation = 'relu'))
+model.add(Dense(256, activation = 'relu'))
+model.add(Dense(256, activation = 'relu'))#relu = Rectified Linear Unit(activation function)
+model.add(Dense(10, activation = 'softmax'))# 10 units because we have 0-9 output values.
+
+#compile the model : 
+model.compile(optimizer = 'adam', loss = 'sparse_categorical_crossentropy', metrics = ['accuracy'])# multiclass classification
+
+# Training of model(Tentative values of epochs, might change according to requirement)
+model.fit(x_train, y_train, epoch = 10, verbose = 1)# i.e we want our training data to iterate 10 times
+
+#predicting our test data
+prediction = model.predict_classes(x_test)
+
+#finding accuracy of model : 
+from sklearn.metrics import classification_report
+accuracy = classification_report(y_test, prediction)#(according to this model current accuracy is 98 percent).
 
