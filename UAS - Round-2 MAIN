@@ -22,7 +22,7 @@ model.add(Dense(10, activation = 'softmax'))# 10 units because we have 0-9 outpu
 model.compile(optimizer = 'adam', loss = 'sparse_categorical_crossentropy', metrics = ['accuracy'])# multiclass classification
 
 # Training of model(Tentative values of epochs, might change according to requirement)
-model.fit(x_train, y_train, epoch = 10, verbose = 1)# i.e we want our training data to iterate 10 times
+model.fit(x_train, y_train, epoch = 10, verbose = 1, validation_data = (x_test, y_test))# i.e we want our training data to iterate 10 times
 
 #predicting our test data
 prediction = model.predict_classes(x_test)
