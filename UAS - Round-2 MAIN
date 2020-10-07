@@ -31,3 +31,18 @@ prediction = model.predict_classes(x_test)
 from sklearn.metrics import classification_report
 accuracy = classification_report(y_test, prediction)#(according to this model current accuracy is 98 percent).
 
+#Saving of model : 
+#(it will save your data and make it capable to load it later)(h5 format of file make it capable to store large amount of data).
+model.save("Model's name.h5")
+
+"""If you want to again load the model :
+
+from tensorflow.keras.models import load_models
+load = load_models("Model's name.h5")
+
+and then you can predict your data using this load model."""
+
+
+
+
+
