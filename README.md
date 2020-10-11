@@ -5,7 +5,9 @@ Click_images file consist of software system which will inable your webcam to cl
 Hence, this complete project will help any unmanned machine to click image of any sheet(boord) and recognize the shown digit on its own and classify other further tasks.
 
 In Sequential model, used 3 Dense layers of 256 units and Rectified Linear Unit, because it is the case of Mutually exclusive multi-class classification so here we used "softmax"
-as our activation function. While compiling optimiser used is = "adam", loss = "sparse_categorical_crosentropy". Model is trained at 10 epoch values, verbose as 2, also included validation data on(x_test, y_test).
+as our activation function. While compiling optimiser used is = "adam", loss = "sparse_categorical_crosentropy". Model is trained at 10 epoch values, verbose as 2, also included validation data on(x_test, y_test)(Including validation data during training improved accuracy of model).
+
+Inclusion of Dropouts either at one layer or at each layer decreased accuracy of model (It gave good accuracy in starting of prediction but then accuracy decreased rapidly and decreased upto 19%).
 
 Data Visualization of the obtaioned predicted and y_test data can easily be done through barplots and heatmaps.
 
